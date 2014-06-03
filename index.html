@@ -1,0 +1,56 @@
+
+<html>
+<head>
+    <link rel="stylesheet" src="css/browser.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" src="js/components/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="APP_ROOT">
+
+    <script type="text/x-handlebars">
+    
+        {{outlet}}
+        {{hello}}
+
+        <h1>{{dynoForm}}</h1>
+        {{input valueBinding=dynoForm}}
+
+  <a type="button" href="#" class="btn" {{action 'getDyno'}}> Get Input Value </a>
+
+  <a type="button" class="btn btn-default" {{action 'newItem'}}> Add New Item </a>
+        {{anyName}}
+
+        {{#each item in model}}
+            {{item.amount}}
+        {{/each}}
+
+        {{input valueBinding=model}}
+
+    <br>
+
+    <input class="text" placeholder="Username..." id="username">
+    <input class="text" placeholder="Password..." id="password" type="password">
+
+    <a type="button" href="#" class="btn" {{action 'createUser'}}> Create User </a>
+
+    <div class="lead" id="status"></div>
+
+    <br>
+
+    <input class="text" id="search">
+
+    <a type="button" href="#" class="btn" {{action 'search'}}> Find </a>
+
+    <br>
+    <br>
+    <button class = "btn btn-default" {{action 'natural'}}>Compute</button>
+        <div class="natural" contentEditable></div>
+
+    </script>
+
+</div>
+</body>
+
+<script data-main="js/config_require.js" src="js/require.js"></script>
+</html>
